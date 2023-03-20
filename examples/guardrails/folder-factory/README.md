@@ -16,25 +16,25 @@ The folder factory will:\
 - create a folders with defined organisational policies
 
 It uses YAML configuration files for every folder with the following sample structure:`
-``\
-parent: folders/XXXXXXXXX\
-org_policies:\
-  policy_boolean:\
-    constraints/compute.disableGuestAttributesAccess: true\
-    constraints/iam.disableServiceAccountCreation: false\
-    constraints/iam.disableServiceAccountKeyCreation: false  \
-    constraints/iam.disableServiceAccountKeyUpload: false\
-    constraints/gcp.disableCloudLogging: false \
-  policy_list:\
-    constraints/compute.vmExternalIpAccess:\
-      inherit_from_parent: null\
-      status: true\
-      suggested_value: null\
-      values:\
-iam:\
-  roles/resourcemanager.projectCreator:\
-    - serviceAccount:XXXXX@XXXXXX`
-``
+```
+parent: folders/XXXXXXXXX
+org_policies:
+  policy_boolean:
+    constraints/compute.disableGuestAttributesAccess: true
+    constraints/iam.disableServiceAccountCreation: false
+    constraints/iam.disableServiceAccountKeyCreation: false  
+    constraints/iam.disableServiceAccountKeyUpload: false
+    constraints/gcp.disableCloudLogging: false 
+  policy_list:
+    constraints/compute.vmExternalIpAccess:
+      inherit_from_parent: null
+      status: true
+      suggested_value: null
+      values:
+iam:
+  roles/resourcemanager.projectCreator:
+    - serviceAccount:XXXXX@XXXXXX
+```
 
 Every folder is defined with its own yaml file located in the following [Folder](data/folders).\
 Copy "folder.yaml.sample" to "folder_name.yaml"; Name of the yaml file will be used to create folder with the same name.\
